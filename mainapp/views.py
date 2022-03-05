@@ -17,7 +17,12 @@ def main(request):
 def products(request, pk=None):
     title = "продукты"
     links_menu = ProductCategory.objects.all()
-    same_products = Product.objects.all()
+
+    if pk:
+        same_products = Product.objects.get_queryset().filter(category_id=pk)
+    else:
+        same_products = Product.objects.all()
+
     content = {
         "title": title,
         "links_menu": links_menu,
