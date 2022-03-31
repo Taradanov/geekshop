@@ -162,6 +162,6 @@ def reverse_func(apps, schema_editor):
 
 class Migration(migrations.Migration):
 
-    dependencies = [("mainapp", "0003_auto_20220326_0250")]
+    dependencies = [("mainapp", "0001_initial")]
 
     operations = [migrations.RunPython(forwards_func, reverse_func)]
