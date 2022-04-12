@@ -244,3 +244,4 @@ fabric.properties
 # geekshop --->
 tmp
 # <--- geekshop
+/venv2/
