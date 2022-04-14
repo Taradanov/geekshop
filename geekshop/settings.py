@@ -171,10 +171,15 @@ EMAIL_FILE_PATH = "tmp/email-messages/"
 
 AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",
+    # 'social_core.backends.linkedin.LinkedinOAuth2',
+    # 'social_core.backends.instagram.InstagramOAuth2',
+    "social_core.backends.facebook.FacebookOAuth2",
     "social_core.backends.github.GithubOAuth2",
 )
 
 import json
+
+# ******************************************************
 
 with open(
     os.path.join(BASE_DIR, "tmp", "secrets", "github.json"), "r"
@@ -183,3 +188,13 @@ with open(
 
 SOCIAL_AUTH_GITHUB_KEY = github_auth["client_id"]
 SOCIAL_AUTH_GITHUB_SECRET = github_auth["client_secret"]
+
+# ******************************************************
+
+with open(
+    os.path.join(BASE_DIR, "tmp", "secrets", "facebook.json"), "r"
+) as secrets:
+    facebook_auth = json.load(secrets)
+
+SOCIAL_AUTH_FACEBOOK_KEY = facebook_auth["client_id"]  # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = facebook_auth["client_secret"]  # App Secret
