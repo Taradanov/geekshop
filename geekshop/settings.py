@@ -194,12 +194,13 @@ SOCIAL_AUTH_GITHUB_KEY = github_auth["client_id"]
 SOCIAL_AUTH_GITHUB_SECRET = github_auth["client_secret"]
 
 # Django Debug Toolbar --->
+
 if DEBUG:
     INSTALLED_APPS.extend([
         "debug_toolbar",
         "template_profiler_panel",
+        "django_extensions",
     ])
-
 
 if DEBUG:
     MIDDLEWARE.extend([
@@ -233,4 +234,5 @@ if DEBUG:
         "debug_toolbar.panels.profiling.ProfilingPanel",
         "template_profiler_panel.panels.template.TemplateProfilerPanel",
     ]
+
 # <--- Django Debug Toolbar
