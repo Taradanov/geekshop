@@ -23,7 +23,10 @@ def get_product_price(request, pk):
             return JsonResponse({"price": 0})
 
 
-class OrderList(ListView):
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+
+class OrderList(LoginRequiredMixin, ListView):
     model = Order
 
     def get_queryset(self):
