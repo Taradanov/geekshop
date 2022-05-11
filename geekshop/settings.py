@@ -10,7 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = (
-    "django-insecure-$5rw9di_jqhuscpkyxi4^zsou&-r=nu=!5v+_ik0arwgo_az3#"
+    "django-insecure-$5rw9di_jqhuscpkyxi4^zsou&-r=nu=!5v+_ik0arwgo$az3#"
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -194,7 +194,6 @@ SOCIAL_AUTH_GITHUB_KEY = github_auth["client_id"]
 SOCIAL_AUTH_GITHUB_SECRET = github_auth["client_secret"]
 
 # Django Debug Toolbar --->
-
 if DEBUG:
     INSTALLED_APPS.extend(
         [
@@ -203,6 +202,7 @@ if DEBUG:
             "django_extensions",
         ]
     )
+
 
 if DEBUG:
     MIDDLEWARE.extend(
@@ -238,5 +238,4 @@ if DEBUG:
         "debug_toolbar.panels.profiling.ProfilingPanel",
         "template_profiler_panel.panels.template.TemplateProfilerPanel",
     ]
-
 # <--- Django Debug Toolbar
